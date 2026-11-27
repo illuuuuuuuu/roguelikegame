@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="《余烬协议》与肉鸽游戏图鉴的项目说明、研究边界和五分钟展示提纲。">
+<title>项目说明与展示提纲 · 余烬协议</title>
+<style>
+:root{color-scheme:light;--ink:#1b2530;--muted:#526171;--line:#d9e0e5;--accent:#953c27;--wash:#f5f7f8}*{box-sizing:border-box}body{margin:0;background:#e9edf0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:15px;line-height:1.75}main{max-width:920px;margin:32px auto;background:white;padding:56px 64px;box-shadow:0 8px 32px #17273712}.toolbar{max-width:920px;margin:24px auto 0;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:0 4px;color:var(--muted);font-size:14px}button{padding:10px 20px;border:1px solid var(--ink);background:white;border-radius:6px;font:inherit;cursor:pointer;color:var(--ink)}button:hover{background:var(--wash)}button:focus-visible,a:focus-visible{outline:3px solid #f0b080;outline-offset:3px}h1{font-size:36px;line-height:1.25;letter-spacing:-1px;margin:8px 0 16px}h2{font-size:23px;margin:30px 0 12px;line-height:1.4}h3{font-size:17px;margin:22px 0 8px}p{margin:10px 0}.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--accent)}.lead{font-size:18px;line-height:1.65}.meta{color:var(--muted);font-size:14px}.callout{border-left:4px solid var(--accent);padding:12px 18px;background:#faf5f1;margin:22px 0}.small{font-size:13px;color:var(--muted)}.rule{border:0;border-top:1px solid var(--line);margin:28px 0}table{border-collapse:collapse;width:100%;margin:15px 0;font-size:14px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:10px 11px}th{background:var(--wash);font-weight:650}thead{display:table-header-group}tr{break-inside:avoid}ul,ol{padding-left:23px;margin:10px 0}li{margin:6px 0}a{color:#145d79;text-underline-offset:3px;overflow-wrap:anywhere}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.92em;background:var(--wash);padding:2px 5px;border-radius:3px}.page-title{padding-bottom:12px;border-bottom:1px solid var(--line)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pair>div{padding:15px 18px;border:1px solid var(--line);border-radius:7px}.pair h3{margin-top:0}footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.label{font-size:13px;display:inline-block;padding:3px 9px;background:#eef2f5;border-radius:3px}.break{break-before:page}
+@page{size:A4;margin:17mm 17mm 18mm} @media print{body{background:white;font-size:10.2pt;line-height:1.6}main{max-width:none;margin:0;padding:0;box-shadow:none}.toolbar{display:none}h1{font-size:27pt}h2{font-size:16pt;margin-top:20px}h3{font-size:12pt}h1,h2,h3{break-after:avoid}p,li{orphans:3;widows:3}.lead{font-size:12pt}.meta,table{font-size:9.2pt}.small{font-size:8.8pt}.callout{padding:10px 14px;margin:16px 0;print-color-adjust:exact;-webkit-print-color-adjust:exact}.pair{gap:12px}table{margin:10px 0}th,td{padding:7px 8px}a{color:#145d79}footer{font-size:8pt}.page-title{margin-top:0}.pair>div{break-inside:avoid}thead,th{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+@media(max-width:680px){main{margin:16px 0;padding:28px 23px}.toolbar{margin:16px 20px 0;font-size:12px}h1{font-size:30px}.pair{grid-template-columns:1fr}table{font-size:12px}th,td{padding:8px 6px}}
+</style>
+</head>
+<body>
+<div class="toolbar"><span>项目材料 · 可打印 / 另存为 PDF</span><button type="button" onclick="window.print()">打印文档</button></div>
+<main>
+<header>
+<div class="eyebrow">ROGUELIKE LAB / PROJECT GUIDE</div>
+<h1>余烬协议<br>可控的运气</h1>
+<p class="lead">一个可玩的回合制卡牌肉鸽，和一份带来源的肉鸽游戏图鉴。围绕“随机奖励中的选择如何改变体验”，把游戏制作转化为可观察、可复查的设计探索。</p>
+<p class="meta">材料日期：2026 年 11 月 27 日<br>申请者：<strong>待本人填写</strong>　学校 / 年级：<strong>待本人填写</strong><br>个人贡献：<strong>待本人据实补充</strong></p>
+</header>
+<div class="callout"><strong>当前状态</strong><br>已制作游戏原型、科普内容与本机数据记录功能。尚未开展真人研究；本文中的研究设计是可执行方案，不是已经验证的结论。技术验证与真人体验研究需要分别记录。</div>
+<h2>项目在做什么</h2>
+<p>网站包含两个相互连接的部分。科普图鉴介绍 10 款有代表性的肉鸽游戏，帮助读者理解不同作品如何使用随机内容、重复挑战和能力组合；原创游戏《余烬协议》让读者亲自体验卡牌构筑，并比较两种奖励机制。</p>
+<div class="pair">
+<div><h3>游戏：亲自作出选择</h3><p>在有限能量下选择出牌，经历战斗与事件，逐步改变牌组。相同种子用于对照两种奖励机制。</p></div>
+<div><h3>图鉴：理解设计来源</h3><p>10 款作品各有原创转述、机制摘要、设计观察和来源链接。机制示意 SVG 为本项目原创图形。</p></div>
+</div>
+<h2>研究问题与可检查的假设</h2>
+<p><strong>研究问题：</strong>当奖励候选相同，“从三张中选择一张”与“系统直接授予第一张”，会怎样影响玩家的选择感、公平感、乐趣，以及局内表现？</p>
+<p><strong>探索性假设：</strong>奖励选择可能提高主观选择感；公平感、乐趣和通关表现是否也随之提高，需要实际数据判断。喜欢随机惊喜的玩家也可能给出不同反馈。</p>
+<p>项目不会把“更多选择必然更好玩”当成预设答案。若不同评分没有一致方向，或不同参与者体验相反，这些同样是有用的设计发现。</p>
+<footer>项目说明 · 版本 1.0　｜　申请者信息与真实研究结果待补充</footer>
+
+<section class="break">
+<h2 class="page-title">游戏规则与项目结构</h2>
+<p>《余烬协议》是一款回合制卡牌肉鸽。它将规模控制在一次可完整体验的挑战内，用清晰的规则承载奖励机制实验。</p>
+<table><thead><tr><th scope="col">要素</th><th scope="col">当前实现</th><th scope="col">展示时可以解释什么</th></tr></thead><tbody>
+<tr><td>卡牌与起始状态</td><td>21 种卡牌；初始 70 生命，10 张初始牌。</td><td>有限的初始牌组，如何通过局内奖励产生变化。</td></tr>
+<tr><td>回合资源</td><td>通常每回合 3 能量；首回合 4 能量。</td><td>能量限制如何让出牌顺序和取舍变得重要。</td></tr>
+<tr><td>挑战路线</td><td>7 个固定类型节点。</td><td>在保留随机奖励的同时，减少路线差异对比较的干扰。</td></tr>
+<tr><td>两种奖励机制</td><td>三选一；或随机授予同一候选组的第一张。</td><td>比较“能否选择”，而不只是比较两个完全不同的关卡。</td></tr>
+<tr><td>相同种子</td><td>共同遭遇、奖励候选与节点级洗牌随机序列。</td><td>控制部分随机来源，同时承认后续牌组会因奖励而分化。</td></tr>
+<tr><td>数据记录</td><td>本机保存，支持 JSON、CSV；含回合、出牌、伤害与胜负。</td><td>从过程记录回看体验，而不只保留一个通关结果。</td></tr>
+<tr><td>局后评分</td><td>公平感、选择感、乐趣，各 1–5 分。</td><td>分别观察三个不同维度，避免把“赢了”直接等同于“好玩”。</td></tr>
+</tbody></table>
+<h3>七节点节奏</h3>
+<table><thead><tr><th scope="col">顺序</th><th scope="col">节点</th><th scope="col">作用</th></tr></thead><tbody>
+<tr><td>1</td><td>战斗</td><td>熟悉能量、出牌与敌人行动。</td></tr>
+<tr><td>2</td><td>事件</td><td>在战斗之外作出选择。</td></tr>
+<tr><td>3</td><td>战斗</td><td>观察当前牌组如何运行。</td></tr>
+<tr><td>4</td><td>营地</td><td>在连续挑战之间进行调整。</td></tr>
+<tr><td>5</td><td>精英</td><td>用更强的对手检验构筑。</td></tr>
+<tr><td>6</td><td>事件</td><td>在最终战前再次权衡。</td></tr>
+<tr><td>7</td><td>Boss</td><td>检验本局资源和卡牌组合。</td></tr>
+</tbody></table>
+<h3>为什么选择固定节点</h3>
+<p>固定节点降低了实现复杂度，也使两种机制有更接近的挑战框架。这个原型的研究重点是奖励选择，而不是宣称已经实现大规模随机地图。遭遇顺序固定；奖励候选与洗牌由种子决定。</p>
+<p class="small">相同种子不意味着所有后续体验完全相同：牌组内容、玩家出牌、事件决策和战斗长度仍可能不同。这些差异需要在分析时解释。</p>
+</section>
+
+<section class="break">
+<h2 class="page-title">如何研究，如何解释结果</h2>
+<h3>建议的最小真人试玩</h3>
+<ol>
+<li>使用匿名参与者编号。先让参与者理解基本操作；练习过程不计入正式比较。</li>
+<li>每位参与者体验两种奖励模式，使用同一共同种子。平衡 AB / BA 顺序：A 为三选一，B 为随机授予。</li>
+<li>每局结束立即分别填写公平感、选择感和乐趣评分，再保留原始导出文件。</li>
+<li>完成两局后进行简短访谈，寻找评分背后的具体时刻，而不是引导参与者赞同某种机制。</li>
+<li>逐人配对比较，再汇总方向与差异。完整流程和空白记录表见配套《真人试玩工具包》。</li>
+</ol>
+<h3>三层证据各自能说明什么</h3>
+<table><thead><tr><th scope="col">证据</th><th scope="col">可支持的描述</th><th scope="col">不能直接推出</th></tr></thead><tbody>
+<tr><td>技术验证</td><td>指定操作、规则和导出是否按预期工作；具体通过情况以验证记录为准。</td><td>真实玩家觉得有趣、公平或愿意长期游玩。</td></tr>
+<tr><td>局内行为</td><td>某参与者在某种机制下的回合、出牌、伤害与结果。</td><td>单个胜负差异完全由奖励机制造成。</td></tr>
+<tr><td>评分与访谈</td><td>参与者在本次原型中的主观体验、理由与具体例子。</td><td>对所有玩家、所有肉鸽游戏都成立的结论。</td></tr>
+</tbody></table>
+<h3>分析时必须保留的边界</h3>
+<ul>
+<li><strong>单位是参与者。</strong>同一个人玩多局，不等于获得多个相互独立的玩家样本。报告时分别写人数与局数。</li>
+<li><strong>奖励与牌组会分化。</strong>选择模式可以改变奖励质量、搭配程度和后续抽牌；这些是机制可能产生的路径，不应声称已经完全隔离。</li>
+<li><strong>学习会影响第二局。</strong>AB / BA 能平衡部分顺序影响，不能消除记忆；相同种子也可能让第二局更熟悉。</li>
+<li><strong>事件选择仍有差异。</strong>记录关键事件与决策，不把共同种子描述为逐步完全相同的体验。</li>
+<li><strong>主观维度分开看。</strong>公平感、选择感、乐趣不合并为没有依据的“综合体验分”。</li>
+<li><strong>便利试玩适合探索。</strong>小规模、非随机招募的结果用于形成改进方向，不证明普遍因果关系。</li>
+</ul>
+<div class="callout"><strong>当前没有真人结果。</strong><br>不要填写虚构参与人数、平均分、满意度或通关率。浏览计数不是独立访客数，也不是实验参与人数，不能据此推断研究成效。</div>
+</section>
+
+<section class="break">
+<h2 class="page-title">设计来源、原创内容与协作说明</h2>
+<h3>图鉴包含的作品</h3>
+<p>哈迪斯、杀戮尖塔、以撒的结合：重生、死亡细胞、吸血鬼幸存者、小丑牌、雨中冒险 2、洞穴探险 2、挺进地牢、超越光速。</p>
+<p>图鉴关注玩法和设计机制，不依赖实时价格或评分。年份按引用的 Steam 官方商店所列 PC 正式发行年份记录；中文名称采用常见译名。“设计观察”是本项目对机制的解读，与开发商的事实说明分开。</p>
+<h3>原创与借鉴的范围</h3>
+<p>原创部分包括《余烬协议》的原型实现、网站内容组织和机制示意 SVG。项目借鉴肉鸽游戏中常见的随机奖励、重复挑战和局内构筑结构；图鉴中的游戏名称与原作权利归各自权利人。原创示意图不应标注为商业游戏实机截图。</p>
+<h3>AI 协助应如实写明</h3>
+<p>本项目使用 Codex 协助进行网站与游戏实现、界面制作、资料查找与转述、技术验证，以及研究和展示材料起草。具体通过了哪些技术检查，以实际验证记录为准。AI 生成与协助并不等于已经开展真人研究。</p>
+<table><thead><tr><th scope="col">项目角色</th><th scope="col">可以据实记录的内容</th></tr></thead><tbody>
+<tr><td>申请者</td><td>提出升学项目用途、选择“原创游戏＋科普图鉴”双部分方向、选择回合制卡牌形式。后续实际完成的规则调整、试玩组织、分析和反思，待本人据实补充。</td></tr>
+<tr><td>AI 协助</td><td>代码与页面实现、内容整理、材料初稿、技术检查支持。申请者应理解并复核提交内容。</td></tr>
+<tr><td>真实参与者</td><td>尚未招募或记录。开展试玩后，只报告真实参与、真实反馈与取得的授权范围。</td></tr>
+</tbody></table>
+<h3>个人贡献填写模板</h3>
+<p>“我负责了【本人实际完成的工作】，其中一个具体决策是【问题与选择】。Codex 协助了【实际协助范围】。我通过【亲自进行的验证或试玩】发现【真实问题】，随后作出【真实修改】。目前的局限是【仍未解决的问题】。”</p>
+<p class="small">尚未完成的步骤标为计划。材料模板中的经历与结果需由实际工作补充。</p>
+<h3>研究参考</h3>
+<ul>
+<li><a href="https://aaai.org/papers/ws04-04-001-mda-a-formal-approach-to-game-design-and-game-research/" target="_blank" rel="noopener noreferrer">Hunicke、LeBlanc、Zubek：MDA: A Formal Approach to Game Design and Game Research</a>，2004。用于区分规则、运行中的行为与体验。</li>
+<li><a href="https://www.pcgbook.com/chapter01.pdf" target="_blank" rel="noopener noreferrer">Togelius、Shaker、Nelson：Procedural Content Generation in Games，第 1 章</a>。用于理解程序化内容生成及可玩性约束。</li>
+<li><a href="https://www.roguebasin.com/index.php/Berlin_Interpretation" target="_blank" rel="noopener noreferrer">RogueBasin：Berlin Interpretation</a>。一份历史上的传统 Roguelike 解释，不作为现代肉鸽的唯一边界。</li>
+<li><a href="https://store.steampowered.com/app/646570/Slay_the_Spire/" target="_blank" rel="noopener noreferrer">Slay the Spire 官方 Steam 商店</a>。卡牌构筑、变化路线与遗物协同的作品参考。其余作品来源见网站图鉴。</li>
+</ul>
+</section>
+
+<section class="break">
+<h2 class="page-title">五分钟展示提纲</h2>
+<p>建议提前打开网站，准备一份可演示的当前游戏状态。演示状态和测试数据要明确说明，不能冒充已收集的真人结果。不要在台上等待一整局结束。</p>
+<table><thead><tr><th scope="col">时间</th><th scope="col">画面与操作</th><th scope="col">表达重点</th></tr></thead><tbody>
+<tr><td>0:00–0:35</td><td>网站首页，展示两个入口。</td><td>“我围绕随机奖励中的选择做了一个游戏原型，同时整理图鉴，帮助读者理解肉鸽的设计。”</td></tr>
+<tr><td>0:35–1:10</td><td>打开一款卡牌图鉴，展示机制与来源。</td><td>说明从现有作品学到什么；资料事实与自己的设计观察如何区分。</td></tr>
+<tr><td>1:10–2:20</td><td>进入《余烬协议》，展示能量、出牌与一个奖励界面。</td><td>用一处具体选择说明攻击、防守或牌组搭配的取舍；解释三选一和随机授予的差别。</td></tr>
+<tr><td>2:20–3:10</td><td>展示共同种子、局后评分和导出入口。</td><td>说明哪些随机来源保持共同，哪些后续体验仍会分化。</td></tr>
+<tr><td>3:10–4:10</td><td>展示真人试玩方案或真实记录。</td><td>若未收集：明确说“研究待开展”。若已收集：分别报告人数、局数、配对评分与具体反馈。</td></tr>
+<tr><td>4:10–5:00</td><td>项目说明中的贡献与局限。</td><td>据实说明本人和 AI 分工，讲一个真实决策，并提出下一步要验证的问题。</td></tr>
+</tbody></table>
+<h3>常见追问的准备方向</h3>
+<p><strong>为什么用同种子？</strong>让两种机制共享部分遭遇和奖励来源，减少无关随机差异；它不能保证后续牌组与行动完全一致。</p>
+<p><strong>为什么不能只看通关率？</strong>胜负受熟练程度、事件决策、牌组协同等影响；选择感、公平感和乐趣也不是胜负的同义词。</p>
+<p><strong>研究的最大限制是什么？</strong>目前尚无真人数据；未来即使开展小规模便利试玩，也有顺序、记忆和样本代表性限制。</p>
+<p><strong>你的贡献是什么？</strong>用真实工作回答，指出一个本人做出的选择、亲自验证的发现和随之发生的修改，同时交代 AI 协助。</p>
+<h3>提交前核对</h3>
+<p>填写姓名与学校；把个人贡献改成真实陈述；删除未完成工作的完成式表述；为测试文件标记来源；核查图鉴链接；实际尝试一次游戏与数据导出；将真人研究状态与网站计数口径写清楚。</p>
+<footer>五分钟提纲是展示辅助材料，不是对已完成研究或申请结果的保证。资料核实日期：2026 年 11 月 27 日。</footer>
+</section>
+</main>
+</body>
+</html>
